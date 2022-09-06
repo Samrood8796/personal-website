@@ -475,6 +475,7 @@
   <script>
     $("#submit-form").submit((e)=>{
         e.preventDefault()
+        if ( validateEmail() && validateName()) {
         $.ajax({
             url:"https://script.google.com/macros/s/AKfycbyt4wJuzTP_1k6-iecMrIbUqzEXiTU8JGKzqU720JHSylG59Dj50CZ9t9pKIgxI9UcUPw/exec",
             data:$("#submit-form").serialize(),
@@ -489,7 +490,11 @@
 
             }
         })
-    })
+    }else{
+      alert("validation error")
+    }
+  })
+
 </script>
 </body>
 
